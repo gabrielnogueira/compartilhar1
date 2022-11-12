@@ -48,7 +48,7 @@
                   console.log({Nome: nomeid.value, Idade: idadeid.value, Profissão: profid.value, Email: emailid.value, Telefone: teleid.value, DatadePreenchimento: dataid.value });
                 }
 
-                const nomes= [
+                const pessoas = [
                      {name: "Fabiana Araújo", age: 33 },
                      {name: "Gabriel Gomes", age: 25 },
                      {name: "Fernanda Henrique", age: 17 },
@@ -58,8 +58,48 @@
                      {name: "Antonio Miguel", age: 69 },
                    ];
                    
-    
 
+                //Criar uma função que retorna os dados de uma pessoa pelo nome passado via parametro
+                //Dentro da função temos que iterar sobre o array "pessoas" e achar o registro que tenha o mesmo nome que o parametro da função
+                //Se não acharmos, temos que retornar um aviso de nenhum registro encontrado.
+                //Pra você entender e praticar, vou criar o corpo da função e as instruções
+
+                //Tenha em mente que qualquer pessoa do mundo inteiro pode dar manutenção no seu código no futuro (no caso de um código produzido para uma empresa)
+                //Por isso é sempre bom usar os nomes das suas funções e variaveis em Inglês. É sempre bom usar conveção da comunidade da linguagem também, assim fica facil 
+                // qualquer pessoa que pegar seu código conseguir le-lo e entender o funcionamento. https://www.30secondsofcode.org/articles/s/javascript-naming-conventions
+
+                //Declaração do nome e assinatura da função. A conveção é sempre usar o padrão camelCase para nome de funções e variaveis.
+                // funções são case-sensitive, ou seja, se a letra é maiuscula ou minuscula importa muito na hora de usar. 
+                // o comum na comunidade é usar um verbo no imperativo + substantivo, de modo que o nome da função descreva o que ela faz.
+                // ex: buscarPessoa. Pelo nome já imaginamos o que a função faz, certo? Mas precisamos de passar isso pra Ingles. 
+                // ex: getPerson.
+                // Essa nossa função deve receber um parametro, que é o nome da pessoa que o usuário quer encontrar na nossa base de dados (array pessoas);
+                // para receber esse parametro, você deve colocar entre () o nome da variavel que esse valor vai ficar armazenado:
+                // ex:  getPerson(persoName)
+                function nomes(){
+                     // aqui você precisa iterar sobre todos os registros do array pessoas e, quando achar o objeto em que o nome é igual ao parametro da função, você deve retorna-lo.
+                     // use o return para isso. A nossa função deve retornar para quem a chamou o objeto com os dados daquela pessoa. Só imprimir com console.log não satisfaz o requerimento do exercicio.
+                     for(let i = 0; i < pessoas.length; i++){
+                        // esse nomeid aqui não é valido por 2 motivos
+                        // 1º ele não é um valor, ele é a referencia para o nosso input html (campo na tela). Se você quiser usa-lo, você deve usar === nomeid.value.
+                        // 2º a noss afunção pede pra procurar pelo nome que foi recebido como parametro da função, então mesmo que funcione usando nomeid.value, não satisfaz o requerimento do exercicio
+                         if(pessoas[i].name === nomeid){
+                          // use o return aqui para que a nossa função retorne o objeto para quem à chamou
+                           console.log(pessoas[i].name);
+                          }
+                        }
+                        // Aqui você deve usar o return para retorna algo caso não encontre o objeto dentro do array pessoas.
+                        // o código só vai chegar até aqui se iterar em todo o objeto array pessoas e não achar ninguem, caso contrario, o codigo vai parar a execução quando achar alguem, por  isso o return 
+                        // de "Pessoa não encontrada" deve ficar aqui na ultima linha da função
+                  } 
+
+                // Acima nós só criamos a nossa função, agora precisamos chama-la, e pegar o retorno dela, que será o nome da pessoa que queremos. Para fazer isso, temos que declarar uma variavel
+                // e essa variavei receberá o retorno da nossa função.
+                // ex: let person = getPerson(nomeid.value) 
+                // observe que estamos passando como parametro da função getPerson o valor que está no nosso input na tela. mas podemos passar qualquer coisa, como por exemplo, criar um novo campo no qual o usuário possa 
+                // digitar um valor par abuscar no nosso array e chamamos esse codigo acima quando ele clicar no botão pesquisar, por exemplo.
+                // depois, só precisamos imprimir o resultado da nossa função, que será o objeto que achamos, ou uma mensagem dizendo que a pessoa não foi encontrada
+                // ex: console.log(person)
 
             </script>
     </div>
