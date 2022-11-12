@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css"/>
+
+
+    <title>Document</title>
+  </head>
+  <body>
+   
+    <div class="principal">
+
+        <form id="form">
+          <div class="form-group">
+            <label for="nome">Nome: </label>
+            <input type="text" id="nomeid" placeholder="" name="nome" />
+            
+            <label for="idade">Idade: </label>
+            <input type="text" id="idadeid" placeholder="" name="idade" />
+    
+            <label for="idade">Profissão: </label>
+            <input type="text" id="profid" placeholder="" name="profissão" />
+    
+            <label for="idade">Email: </label>
+            <input type="text" id="emailid" placeholder="" name="email" />
+    
+            <label for="idade">Telefone: </label>
+            <input type="text" id="teleid" placeholder="" name="telefone" />
+    
+            <label for="idade">Data de Preenchimento: </label>
+            <input type="text" id="dataid" placeholder="  /  /" name="dataPreench" />
+    
+            <input
+            type="submit"
+            class="confirmar"
+            
+            value="confirmar"
+            />
+    
+          </div>
+        </form>
+            <script>
+                form.onsubmit = (event) =>{
+                  event.preventDefault()
+                  console.log({Nome: nomeid.value, Idade: idadeid.value, Profissão: profid.value, Email: emailid.value, Telefone: teleid.value, DatadePreenchimento: dataid.value });
+                }
+
+                const nomes= [
+                     {name: "Fabiana Araújo", age: 33 },
+                     {name: "Gabriel Gomes", age: 25 },
+                     {name: "Fernanda Henrique", age: 17 },
+                     {name: "Ana Luiza", age: 2 },
+                     {name: "Geralda do Nascimento", age: 93 },
+                     {name: "Miguel Souza", age: 70 },
+                     {name: "Antonio Miguel", age: 69 },
+                   ];
+                   
+    
+
+
+            </script>
+    </div>
+ 
+  </body>
+</html>
